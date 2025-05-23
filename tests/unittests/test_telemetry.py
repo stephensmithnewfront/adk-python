@@ -14,7 +14,7 @@ import pytest
 
 async def _create_invocation_context(
     agent: LlmAgent, state: Optional[dict[str, Any]] = None
-) -> ReadonlyContext:
+) -> InvocationContext:
   session_service = InMemorySessionService()
   session = await session_service.create_session(
       app_name='test_app', user_id='test_user', state=state
